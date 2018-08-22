@@ -6,6 +6,12 @@ Here's a mock-up that you should aim for:
 
 ![picture](mock-up.png)
 
+## A few high-level notes
+
+- Always use class names for CSS. No element selectors, no IDs.
+- There are *animated* images for the various weather states in the `images/` folder
+
+
 1. We'll use the OpenWeatherMap API to look up weather data. [Sign up for an account](https://openweathermap.org/api) 
 1. Use this sort of URL to query weather data:
 
