@@ -18,7 +18,7 @@ Here's a mock-up that you should aim for:
 
     https://api.openweathermap.org/data/2.5/weather?zip=THE_USERS_ZIP_CODE_HERE,us&units=imperial&appid=YOUR_API_KEY_HERE
 
-  Note you'll have to supply your API key as well as the zip code the user has input.
+    Note you'll have to supply your API key as well as the zip code the user has input.
 1. There's a bit of starter code in the HTML and CSS file. Take a look and get started! Try to match the mock-up as close as you can.
 
 
