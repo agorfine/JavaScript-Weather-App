@@ -2,31 +2,40 @@
 
 // localStorage.setItem('zipCode', 10029)
 
+// function zipCode () {
+// 	let zip = document.querySelector('.zipcode-input').submit();
+// 	console.log(zip)
+// 	localStorage.setItem('info', zip)
+// 	let info = window.localStorage.getItem('zipCode')
+// 	console.log(info)
+// }
 
-// 
+// let submit = document.querySelector('.zipcode-submit-button')
+
+// submit.addEventListener('click',zipCode)
+
+let submitData = document.querySelector('.zipcode-submit-button')
+let zip = document.querySelector('.zipcode-input').value
 
 
-function zipCode () {
-	let zip = document.querySelector('.zipcode-input').submit();
+function addZip(event){
+	let zip = document.querySelector('.zipcode-input').value
+	let url = `https://api.openweathermap.org/data/2.5/weather?zip=${zip},us&units=imperial&appid=2a1617f7b933ee82ed83525f84f8b56a`
+	event.preventDefault()
+	// https://www.w3schools.com/jsref/event_preventdefault.asp
 	console.log(zip)
-	localStorage.setItem('info', zip)
-	let info = window.localStorage.getItem('zipCode')
-	console.log(info)
+	makeCall(zip)
 }
 
-let submit = document.querySelector('.zipcode-submit-button')
-
-submit.addEventListener('click',zipCode)
+submitData.addEventListener('click', addZip)
 
 
 
-function makeCall() {
-	fetch('https://api.openweathermap.org/data/2.5/weather?zip=10029,us&units=imperial&appid=2b2e1b2e511672ace229734a00a710bb')
+function makeCall(zip) {
+	fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zip},us&units=imperial&appid=2a1617f7b933ee82ed83525f84f8b56a`)
 	.then(result => result.json())
 	.then(result => getData(result))
 }
-
-makeCall();
 
 let getData = function(result){
 	let location = result.name
@@ -37,8 +46,9 @@ let getData = function(result){
 
 let manipulateDom = function(location,temp,description) {
 	document.querySelector('.location').innerHTML = location
-	document.querySelector('.temperature').innerHTML = Math.round(temp)
+	document.querySelector('.temperature').innerHTML = Math.round(temp) + '&deg;';
 	document.querySelector('.description').innerHTML = description 
+	weatherImg()
 }
 
 let weatherImg = function () {
@@ -47,21 +57,24 @@ let weatherImg = function () {
 	let img = document.querySelector('.img')
 
 	if (type.innerHTML.includes('cloud')) {
-		img.classList.add('.cloudy');
+		img.classList.add('cloud');
+		img.classList.remove('img')
 		console.log('test1')
-	} else if (type.innerHTML.includes('sun'))	{
-		img.classList.add('.sunny')
+	} else if (type.innerHTML.includes('sun') || type.innerHTML.includes('clear'))	{
+		img.classList.add('sunny')
+		img.classList.remove('img')
 		console.log('test2')
-	} else if (type.innerHTML.includes('rain')) {
-		img.classList.add('.rain')
+	} else if (type.innerHTML.includes('rain') || type.innerHTML.includes('drizzle')) {
+		img.classList.add('rain')
+		img.classList.remove('img')
 		console.log('test3')
 	} else if (type.innerHTML.includes('partly')) {
-		img.classList.add('.partlyCloudy')
+		img.classList.add('partlyCloudy')
+		img.classList.remove('img')
 		console.log('test4')
 	}
 };
 
-weatherImg();
 
 
 
