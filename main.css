@@ -10,4 +10,41 @@ html, body {
   font-family: 'Open Sans Condensed', sans-serif;
   font-variant: small-caps;
   -webkit-appearance: button;
+  width: 75px;
+  height: 45px;
+  font-size: 20px;
+}
+
+.page-title, .zipcode-form {
+	margin-top: 50px;
+	margin-bottom: 30px;
+	font-size: 50px;
+	display: flex;
+	justify-content: center;
+}
+
+.weather {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.temperature {
+	font-size: 75px;
+}
+
+.description, .location {
+	display: flex;
+	justify-content: center;
+	font-size: 35px;
+}
+
+.img {
+	width: 105px;
+	height: 105px;
+	background-image: url("images/cloudy-day-1.svg");
+	background-repeat: no-repeat;
+	background-size: 100%;
 }
