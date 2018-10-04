@@ -6,6 +6,13 @@ html, body {
   font-family: 'Open Sans Condensed', sans-serif
 }
 
+body {
+	background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+	color: white;
+	height: 728px;
+	background-repeat: no-repeat;
+}
+
 .zipcode-submit-button[type="submit"] {
   font-family: 'Open Sans Condensed', sans-serif;
   font-variant: small-caps;
@@ -18,7 +25,7 @@ html, body {
 .page-title, .zipcode-form {
 	margin-top: 50px;
 	margin-bottom: 30px;
-	font-size: 50px;
+	font-size: 70px;
 	display: flex;
 	justify-content: center;
 }
@@ -80,8 +87,21 @@ html, body {
 	padding: 20px;
 }
 
+.rainBackground {
+	background-image: linear-gradient(to right top, #340755, #604580, #9080ac, #c5bed6, #ffffff);
+}
 
+.cloudBackground {
+	background-image: linear-gradient(to right top, #6c6c6c, #8f8f8f, #b3b3b3, #d8d8d8, #ffffff);
+}
 
+.sunBackground {
+	background-image: linear-gradient(to right top, #229cde, #3ab2e7, #59c8ee, #7addf5, #9df1fc);
+}
+
+.partlyCloudyBcg {
+	background-image: linear-gradient(to right top, #b6c1c0, #b2cdcc, #acd9db, #a6e5ea, #9df1fc);
+}
 
 
 

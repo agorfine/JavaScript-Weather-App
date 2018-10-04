@@ -55,22 +55,23 @@ let weatherImg = function () {
 
 	let type = document.querySelector('.description');
 	let img = document.querySelector('.img')
+	let body = document.querySelector('body')
 
 	if (type.innerHTML.includes('cloud')) {
 		img.classList.add('cloud');
-		img.classList.remove('img')
+		body.classList.add('cloudBackground')
 		console.log('test1')
 	} else if (type.innerHTML.includes('sun') || type.innerHTML.includes('clear'))	{
 		img.classList.add('sunny')
-		img.classList.remove('img')
+		body.classList.add('sunBackground')
 		console.log('test2')
 	} else if (type.innerHTML.includes('rain') || type.innerHTML.includes('drizzle')) {
 		img.classList.add('rain')
-		img.classList.remove('img')
+		body.classList('rainBackground')
 		console.log('test3')
 	} else if (type.innerHTML.includes('partly')) {
 		img.classList.add('partlyCloudy')
-		img.classList.remove('img')
+		body.classList.add('partlyCloudyBcg')
 		console.log('test4')
 	}
 };
