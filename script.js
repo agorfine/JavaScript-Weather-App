@@ -21,7 +21,7 @@ let zip = document.querySelector('.zipcode-input').value
 function addZip(event){
 	let zip = document.querySelector('.zipcode-input').value
 	// get input from user submit bar
-	let url = `https://api.openweathermap.org/data/2.5/weather?zip=${zip},us&units=imperial&appid=1b2e511672ace229734a00a710bb`
+	let url = `https://api.openweathermap.org/data/2.5/weather?zip=${zip},us&units=imperial&appid=2b2e1b2e511672ace229734a00a710bb`
 	// replace zip in url with user input
 	event.preventDefault()
 	// https://www.w3schools.com/jsref/event_preventdefault.asp
@@ -34,7 +34,7 @@ submitData.addEventListener('click', addZip)
 
 
 function makeCall(zip) {
-	fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zip},us&units=imperial&appid=1b2e511672ace229734a00a710bb`)
+	fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zip},us&units=imperial&appid=2b2e1b2e511672ace229734a00a710bb`)
 	.then(result => result.json())
 	.then(result => getData(result))
 }
