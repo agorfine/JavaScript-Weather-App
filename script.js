@@ -59,7 +59,7 @@ let weatherImg = function () {
 	let img = document.querySelector('.img')
 	let body = document.querySelector('body')
 
-	if (type.innerHTML.includes('cloud')) {
+	if (type.innerHTML.includes('cloud') || type.innerHTML.includes('fog')) {
 		img.classList.add('cloud');
 		body.classList.add('cloudBackground')
 		console.log('test1')
